@@ -55,3 +55,13 @@ exports.listMovie = async (req, res) => {
     }
   })
 }
+
+exports.getDetailMovie = async (req, res) => {
+ let {id} = req.params
+ const movie = await MovieModel.findByPk(id)
+ return res.json({
+  success: true,
+  message: `Detail Movie From Id: ${id}`,
+  results: movie
+})
+}

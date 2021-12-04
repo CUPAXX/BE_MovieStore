@@ -10,5 +10,4 @@ const Transaction = sequelize.define('transactions', {
 })
 
 Transaction.belongTo(UserModel, {foreignKey: 'userId', sourceKey: 'id', as: 'userDetail'})
-
 module.exports = Transaction
