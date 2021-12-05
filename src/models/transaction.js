@@ -9,5 +9,5 @@ const Transaction = sequelize.define('transactions', {
   price: Sequelize.STRING,
 })
 
-Transaction.belongTo(UserModel, {foreignKey: 'userId', sourceKey: 'id', as: 'userDetail'})
+Transaction.belongsTo(UserModel, {foreignKey: 'userId', sourceKey: 'id', as: 'userDetail'})
 module.exports = Transaction

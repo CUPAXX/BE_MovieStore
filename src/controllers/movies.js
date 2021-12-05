@@ -1,13 +1,16 @@
 const MovieModel = require('../models/movie')
+const MovieCategoryModel =  require('../models/movieCategory')
 const {Op} = require('sequelize')
 
 exports.createMovie = async (req, res) => {
   const data = req.body
   req.body.picture = req.file ? `${process.env.APP_UPLOAD_ROUTE}/${req.file.filename}` : null
   const movie = await MovieModel.create(data)
+  const {idCategory} = req.body
+  const movieCategory = await MovieCategoryModel.create({movieId: movie.id, categoryId: idCategory})
   return res.json({
     success: true,
-    message: 'Movie successfully added',
+    message: `Movie successfully added`,
     results: movie
   })
 }
