@@ -8,6 +8,6 @@ const MovieCategory = sequelize.define('movieCategories', {
   categoryId: Sequelize.INTEGER,
 })
 
-MovieCategory.belongsTo(MovieModel, {foreignKey: 'movieId', sourceKey: 'id', as: 'movieDetail'})
-MovieCategory.belongsTo(CategoryModel, {foreignKey: 'categoryId', sourceKey: 'id', as: 'categoryDetail'})
+// MovieCategory.belongsTo(MovieModel)
+MovieCategory.belongsTo(CategoryModel)
 module.exports = MovieCategory

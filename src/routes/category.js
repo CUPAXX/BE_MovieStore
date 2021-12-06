@@ -1,6 +1,7 @@
 const category = require('express').Router()
-const {createCategory} = require('../controllers/category')
+const {createCategory, getMovieByCategory} = require('../controllers/category')
 
 category.post('/', createCategory)
+category.get('/get/:id', getMovieByCategory)
 
 module.exports = category

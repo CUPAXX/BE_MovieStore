@@ -11,7 +11,7 @@ exports.createMovie = async (req, res) => {
   return res.json({
     success: true,
     message: `Movie successfully added`,
-    results: movie
+    results: [movie, movieCategory]
   })
 }
 

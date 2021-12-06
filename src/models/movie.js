@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../config/sequelize')
+const MovieCategoryModel = require('./movieCategory')
+const Category = require('./category')
 
 const Movie = sequelize.define('movies', {
   title: Sequelize.STRING,
@@ -7,5 +9,5 @@ const Movie = sequelize.define('movies', {
   description: Sequelize.STRING,
   price: Sequelize.STRING,
 })
-
+Movie.hasMany(MovieCategoryModel, {as: 'category'})
 module.exports = Movie
