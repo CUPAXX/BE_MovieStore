@@ -13,6 +13,15 @@ exports.createCategory = async (req, res) => {
   })
 }
 
+exports.GetCategory = async (req, res) => {
+  const category = await CategoryModel.findAll()
+  return res.json({
+    success: true,
+    message: 'List Category',
+    results: category
+  })
+}
+
 exports.getMovieByCategory = async (req, res) => {
   const {id} = req.params
   const movie = await MovieModel.findAll({
