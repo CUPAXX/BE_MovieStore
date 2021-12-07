@@ -7,7 +7,7 @@ const Membership = sequelize.define('memberships', {
   feature2: Sequelize.STRING,
   feature3: Sequelize.STRING,
   feature4: Sequelize.STRING,
-  price: Sequelize.STRING,
+  price: Sequelize.INTEGER,
 })
 
 module.exports = Membership

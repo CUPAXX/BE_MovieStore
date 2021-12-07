@@ -6,7 +6,7 @@ const Transaction = sequelize.define('transactions', {
   userId: Sequelize.INTEGER,
   refNo: Sequelize.STRING,
   item: Sequelize.STRING,
-  price: Sequelize.STRING,
+  total: Sequelize.INTEGER,
 })
 
 Transaction.belongsTo(UserModel, {foreignKey: 'userId', sourceKey: 'id', as: 'userDetail'})
